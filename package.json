@@ -6,7 +6,7 @@
   "scripts": {
     "//-0-": "====== Common shortcuts =======",
     "clean": "rimraf dist",
-    "flow": "",
+    "flow": "flow check",
     "lint": "eslint --ext=.js,.vue src test",
     "//-DevServer-": "====== Dev server with hotreload supports for Vue and API =======",
     "koaserver": "cross-env PORT=3001 babel-node src/server/index.js",
