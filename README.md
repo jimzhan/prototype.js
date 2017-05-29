@@ -1,5 +1,6 @@
 Vue.js :revolving_hearts: Koa.js
 ================================
+[![dependencies](https://david-dm.org/jimzhan/prototype.js.svg)](https://david-dm.org/jimzhan/prototype.js.svg)
 [![build](https://travis-ci.org/jimzhan/prototype.js.svg?branch=master)](https://travis-ci.org/jimzhan/prototype.js)
 [![npm version](https://img.shields.io/npm/v/prototype.js.svg?style=flat-square)](https://www.npmjs.com/package/prototype.js)
 [![npm downloads](https://img.shields.io/npm/dm/prototype.js.svg?style=flat-square)](https://www.npmjs.com/package/prototype.js)
