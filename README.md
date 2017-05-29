@@ -1,5 +1,9 @@
 Vue.js :revolving_hearts: Koa.js
 ================================
+[![build](https://travis-ci.org/jimzhan/prototype.js.svg?branch=master)](https://travis-ci.org/jimzhan/prototype.js)
+[![npm version](https://img.shields.io/npm/v/prototype.js.svg?style=flat-square)](https://www.npmjs.com/package/prototype.js)
+[![npm downloads](https://img.shields.io/npm/dm/prototype.js.svg?style=flat-square)](https://www.npmjs.com/package/prototype.js)
+
 Production application boilerplate for Vue and Koa, batteries included:
 + ES6 + Babel
 + [ESLint][eslint] with the [airbnb-base][airbnb-base] and [flowtype][eslint-flowtype] rules.
@@ -11,9 +15,6 @@ Production application boilerplate for Vue and Koa, batteries included:
 + [Vue.js][vuejs] progressive frontend framework.
 + [Koa.js][koajs] next generation web framework.
 
-[![build](https://travis-ci.org/jimzhan/prototype.js.svg?branch=master)](https://travis-ci.org/jimzhan/prototype.js)
-[![npm version](https://img.shields.io/npm/v/prototype.js.svg?style=flat-square)](https://www.npmjs.com/package/prototype.js)
-[![npm downloads](https://img.shields.io/npm/dm/prototype.js.svg?style=flat-square)](https://www.npmjs.com/package/prototype.js)
 
 ## Client
 * webpack supports with `develop`, `staging` and `release` settings profiles.
