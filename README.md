@@ -2,9 +2,9 @@ Vue.js :revolving_hearts: Koa.js
 ===============
 Production application boilerplate for Vue and Koa.
 
-[![build](https://travis-ci.org/jimzhan/vue.js.svg?branch=master)](https://travis-ci.org/jimzhan/vue.js)
-[![npm version](https://img.shields.io/npm/v/vue.js.svg?style=flat-square)](https://www.npmjs.com/package/vue.js)
-[![npm downloads](https://img.shields.io/npm/dm/vue.js.svg?style=flat-square)](https://www.npmjs.com/package/vue.js)
+[![build](https://travis-ci.org/jimzhan/prototype.js.svg?branch=master)](https://travis-ci.org/jimzhan/prototype.js)
+[![npm version](https://img.shields.io/npm/v/prototype.js.svg?style=flat-square)](https://www.npmjs.com/package/prototype.js)
+[![npm downloads](https://img.shields.io/npm/dm/prototype.js.svg?style=flat-square)](https://www.npmjs.com/package/prototype.js)
 
 ## Client
 * webpack supports with `develop`, `staging` and `release` settings profiles.
