@@ -4,20 +4,20 @@ import dotenv from 'dotenv';
 import path from 'path';
 import winston from 'winston';
 
+import config from './config';
 import bootstrap from './apps';
 
 dotenv.config();
 
 const server = new Koa();
-const port = process.env.PORT || 3000;
 
 if (process.env.NODE_ENV === 'staging') {
-  const dist = path.resolve(process.env.DIST || 'dist');
+  const dist = path.resolve(process.cwd(), config.static.root);
   server.use(serve(dist));
 }
 
 bootstrap(server);
 
-server.listen(port, () => {
-  winston.info(`Server started at port ${port}`);
+server.listen(config.port, () => {
+  winston.info(`Server started at port ${config.port}`);
 });

@@ -14,6 +14,7 @@ Production application boilerplate for Vue and Koa, batteries included:
 + [Yarn](https://yarnpkg.com/en/) Dependency management.
 + [Vue.js](https://github.com/vuejs/vue) Progressive frontend framework.
 + [Koa.js](https://github.com/koajs/koa) Next generation web framework.
++ [Dotenv](https://github.com/motdotla/dotenv) Production settings profile solution.
 + NPM scripts for common operations.
 
 
@@ -42,9 +43,10 @@ export default {
 
 TODOs
 =====
-- [x] ESLint rules supports
-- [x] webpack/webpack-dev-server support
-- [x] NPM scripts for common operations
-- [x] multiple webpack settings profiles
+- [x] ESLint rules supports.
+- [x] webpack/webpack-dev-server support.
+- [x] NPM scripts for common operations.
+- [x] multiple webpack settings profiles.
+- [x] `dotenv` based multi settings profiles at server side.
 - [ ] unit test integration
 - [ ] e2e test integration
