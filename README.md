@@ -50,5 +50,6 @@ TODOs
 - [x] multiple webpack settings profiles.
 - [x] `dotenv` based multi settings profiles at server side.
 - [x] Grouped routing system.
-- [ ] unit test integration
+- [x] unit test integration
+- [ ] hot reload koa server
 - [ ] e2e test integration
