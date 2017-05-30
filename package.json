@@ -6,6 +6,7 @@
   "scripts": {
     "//-0-": "====== Common shortcuts =======",
     "clean": "rimraf dist",
+    "coverage": "istanbul check-cover",
     "lint": "eslint --ext=.js,.vue src test",
     "//-DevServer-": "====== Dev server with hotreload supports for Vue and API =======",
     "predevserver": "cross-env PORT=3001 pm2 start --watch --name server --interpreter babel-node src/server/index.js",
@@ -25,7 +26,8 @@
     "stop:release": "pm2 delete release",
     "poststop:release": "npm run clean",
     "//-X-": "======= Test case runner suites =======",
-    "test": "mocha --require ignore-styles --compilers js:babel-core/register --recursive test/**/*.spec.js"
+    "pretest": "npm run lint",
+    "test": "mocha --require ignore-styles --compilers js:babel-core/register --recursive test/**/*.spec.js src/**/*.spec.js"
   },
   "repository": "https://github.com/jimzhan/vue.js",
   "author": "Jim Zhan <jim.zhan@me.com>",
@@ -50,6 +52,7 @@
     "mocha": "^3.4.2",
     "object-assign": "^4.1.1",
     "pm2": "^2.4.6",
+    "supertest": "^3.0.0",
     "url-join": "^2.0.2",
     "vue": "^2.3.3",
     "vue-router": "^2.5.3",
@@ -84,6 +87,7 @@
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
     "ignore-styles": "^5.0.1",
+    "istanbul": "^0.4.5",
     "koa-static": "^3.0.0",
     "optimize-css-assets-webpack-plugin": "^1.3.2",
     "ora": "^1.2.0",

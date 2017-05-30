@@ -21,3 +21,5 @@ bootstrap(server);
 server.listen(config.port, () => {
   winston.info(`Server started at port ${config.port}`);
 });
+
+export default server;

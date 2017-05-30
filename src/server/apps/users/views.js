@@ -1,31 +1,23 @@
+import * as models from './models';
 
 export async function list(ctx) {
-  ctx.body = {
-    data: [
-      { a: { username: 'user a' } },
-      { b: { username: 'user b' } },
-      { c: { username: 'user c' } },
-    ],
-  };
+  ctx.body = models.find();
 }
 
 export async function get(ctx) {
-  const data = { data: {} };
-  data[ctx.params.key] = { username: `user ${ctx.params.key}` };
-  ctx.body = data;
+  ctx.body = models.get(ctx.params.key);
 }
 
 export async function create(ctx) {
+  ctx.body = models.create();
   ctx.status = 201;
-  ctx.body = { data: { abc: { username: 'user abc' } } };
 }
 
 export async function update(ctx) {
-  const data = { data: {} };
-  data[ctx.params.key] = { username: 'updated user abc' };
-  ctx.body = data;
+  ctx.body = models.update(ctx.params.key);
 }
 
 export async function remove(ctx) {
+  models.remove(ctx.params.key);
   ctx.status = 204;
 }
