@@ -22,6 +22,7 @@ Production application boilerplate for Vue and Koa, batteries included:
 * webpack supports with `develop`, `staging` and `release` settings profiles.
 
 ## Server
+* configurable prefixed server endpoint (`/v1` by default).
 * intelligent/automatic routers registration.
 
   Module created under `apps` folder with routes defined in `index.js` will be registered onto server router automatically.
@@ -48,5 +49,6 @@ TODOs
 - [x] NPM scripts for common operations.
 - [x] multiple webpack settings profiles.
 - [x] `dotenv` based multi settings profiles at server side.
+- [x] Grouped routing system.
 - [ ] unit test integration
 - [ ] e2e test integration

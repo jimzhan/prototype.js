@@ -17,7 +17,7 @@ module.exports = merge(config, {
     contentBase: path.resolve(root, 'dist'),
     publicPath: '/',
     proxy: {
-      '/': 'http://127.0.0.1:3001'
+      '/v1': `http://127.0.0.1:3001`
     },
   },
   plugins: [

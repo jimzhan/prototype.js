@@ -25,11 +25,14 @@ export default {
     cookieHttpOnly: process.env.SESSION_COOKIE_HTTPONLY,
     saveEveryRequest: process.env.SESSION_SAVE_EVERY_REQUEST,
     expireAtBrowserClose: process.env.SESSION_EXPIRE_AT_BROWSER_CLOSE,
-    sessionEngine: process.SESSION_ENGINE,
-    sessionSerializer: process.SESSION_SERIALIZER,
+    sessionEngine: process.env.SESSION_ENGINE,
+    sessionSerializer: process.env.SESSION_SERIALIZER,
   },
   // ############ Static Resources ############
   static: {
     root: process.env.STATIC_ROOT || 'dist',
+  },
+  URL: {
+    prefix: '/v1',
   },
 };

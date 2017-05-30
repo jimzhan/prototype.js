@@ -8,10 +8,10 @@ import config from './config';
 import bootstrap from './apps';
 
 dotenv.config();
-
 const server = new Koa();
+winston.level = config.debug ? 'debug' : 'info';
 
-if (process.env.NODE_ENV === 'staging') {
+if (config.env === 'staging') {
   const dist = path.resolve(process.cwd(), config.static.root);
   server.use(serve(dist));
 }

@@ -2,6 +2,7 @@ import glob from 'glob';
 import path from 'path';
 import Router from 'koa-router';
 import winston from 'winston';
+import config from '../config';
 
 /**
  * Bootstrap automatically loads all the applications under `apps` folders
@@ -15,7 +16,7 @@ import winston from 'winston';
  *      '<HTTP METHOD> <URL PATTERN>': <View Handler>
  *    }
  *  ```
- * @param {*} server `Koa` application instance.
+ *  @param {*} server `Koa` application instance.
  */
 export default function bootstrap(server) {
   glob(`${__dirname}/*`, { ignore: '**/index.js' }, (error, matches) => {
@@ -30,13 +31,16 @@ export default function bootstrap(server) {
       const routes = module.default;
       const basename = path.basename(abspath);
       const prefix = (module.prefix === false) ? undefined : (module.prefix || `/${basename}`);
-      const router = prefix ? new Router({ prefix }) : new Router();
+      const baseUrl = prefix ? `${config.URL.prefix}${prefix}` : `${config.URL.prefix}`;
+      const router = new Router({ prefix: baseUrl });
+
+      winston.debug(`[${basename}] registered => ${baseUrl}`);
 
       Object.keys(routes).forEach((url) => {
         const [method, pattern] = url.split(/(\s+)/).filter(s => s.trim().length > 0);
         router[method.toLowerCase()](pattern, routes[url]);
         server.use(router.routes()).use(router.allowedMethods());
-        winston.debug(`[${basename}] ${method} ${prefix ? (prefix + pattern) : pattern}`);
+        winston.debug(`[${basename}] ${method} ${pattern}`);
       });
     });
   });
