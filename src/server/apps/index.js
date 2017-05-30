@@ -1,4 +1,3 @@
-/* @flow */
 import glob from 'glob';
 import path from 'path';
 import Router from 'koa-router';

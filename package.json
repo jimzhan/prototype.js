@@ -6,7 +6,6 @@
   "scripts": {
     "//-0-": "====== Common shortcuts =======",
     "clean": "rimraf dist",
-    "flow": "flow check",
     "lint": "eslint --ext=.js,.vue src test",
     "//-DevServer-": "====== Dev server with hotreload supports for Vue and API =======",
     "koaserver": "cross-env PORT=3001 babel-node src/server/index.js",
@@ -83,7 +82,6 @@
     "eslint-plugin-import": "^2.3.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
-    "flow-bin": "^0.46.0",
     "html-webpack-plugin": "^2.28.0",
     "ignore-styles": "^5.0.1",
     "koa-static": "^3.0.0",

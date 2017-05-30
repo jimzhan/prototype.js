@@ -1,4 +1,3 @@
-/* @flow */
 import { login, logout } from './views';
 
 export const prefix = false;

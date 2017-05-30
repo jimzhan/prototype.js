@@ -1,4 +1,3 @@
-/* @flow */
 
 export async function login(ctx) {
   ctx.body = 'login';

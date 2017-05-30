@@ -7,14 +7,14 @@ Vue.js :revolving_hearts: Koa.js
 
 Production application boilerplate for Vue and Koa, batteries included:
 + ES6 + Babel
-+ [ESLint][eslint] with the [airbnb-base][airbnb-base] and [flowtype][eslint-flowtype] rules.
-+ [Mocha][mocha] unit testing and coverage.
-+ [Nightwatch][nightwatch] e2e testing.
-+ [NPM scripts for common operations].
-+ [.editorconfig][editorconfig] for consistent file format.
-+ [Yarn][yarn] lockfile so only verified and up-to-date dependencies are installed.
-+ [Vue.js][vuejs] progressive frontend framework.
-+ [Koa.js][koajs] next generation web framework.
++ [ESLint](https://github.com/eslint/eslint) with the [Airbnb JavaScript](https://github.com/airbnb/javascript) rules.
++ [Mocha](https://github.com/mochajs/mocha) Unit testing and coverage with [Chai](https://github.com/chaijs/chai) assertion framework.
++ [Nightwatch](https://github.com/nightwatchjs/nightwatch) E2E UI automated testing framework.
++ [Editorconfig](http://editorconfig.org/) Consistent coding styles formatter.
++ [Yarn](https://yarnpkg.com/en/) Dependency management.
++ [Vue.js](https://github.com/vuejs/vue) Progressive frontend framework.
++ [Koa.js](https://github.com/koajs/koa) Next generation web framework.
++ NPM scripts for common operations.
 
 
 ## Client
@@ -43,9 +43,8 @@ export default {
 TODOs
 =====
 - [x] ESLint rules supports
-- [x] Flow supports
 - [x] webpack/webpack-dev-server support
+- [x] NPM scripts for common operations
 - [x] multiple webpack settings profiles
-- [ ] multiple server settings profile with encryption supports
 - [ ] unit test integration
 - [ ] e2e test integration

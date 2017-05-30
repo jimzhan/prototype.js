@@ -1,4 +1,3 @@
-/* @flow */
 import Koa from 'koa';
 import serve from 'koa-static';
 import dotenv from 'dotenv';
@@ -8,14 +7,13 @@ import winston from 'winston';
 import bootstrap from './apps';
 
 dotenv.config();
-winston.level = 'debug';
 
 const server = new Koa();
 const port = process.env.PORT || 3000;
 
 if (process.env.NODE_ENV === 'staging') {
-  const root = path.resolve(__dirname, '../../../dist');
-  server.use(serve(root));
+  const dist = path.resolve(process.env.DIST || 'dist');
+  server.use(serve(dist));
 }
 
 bootstrap(server);

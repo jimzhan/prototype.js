@@ -1,4 +1,3 @@
-/* @flow */
 import { list, get, create, update, remove } from './views';
 
 export default {

@@ -1,4 +1,3 @@
-/* @flow */
 
 export async function list(ctx) {
   ctx.body = 'listing users';
