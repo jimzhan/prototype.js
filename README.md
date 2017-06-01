@@ -51,5 +51,5 @@ TODOs
 - [x] `dotenv` based multi settings profiles at server side.
 - [x] Grouped routing system.
 - [x] unit test integration
-- [ ] hot reload koa server
+- [x] hot reload koa server
 - [ ] e2e test integration
