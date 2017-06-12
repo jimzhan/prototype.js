@@ -1,7 +1,7 @@
 import glob from 'glob';
 import path from 'path';
 import Router from 'koa-router';
-import winston from 'winston';
+import logger from 'winston';
 import config from '../config';
 
 /**
@@ -31,16 +31,19 @@ export default function bootstrap(server) {
       const routes = module.default;
       const basename = path.basename(abspath);
       const prefix = (module.prefix === false) ? undefined : (module.prefix || `/${basename}`);
-      const baseUrl = prefix ? `${config.URL.prefix}${prefix}` : `${config.URL.prefix}`;
+      const baseUrl = prefix ? `${config.urls.prefix}${prefix}` : `${config.urls.prefix}`;
       const router = new Router({ prefix: baseUrl });
-
-      winston.debug(`[${basename}] registered => ${baseUrl}`);
 
       Object.keys(routes).forEach((url) => {
         const [method, pattern] = url.split(/(\s+)/).filter(s => s.trim().length > 0);
-        router[method.toLowerCase()](pattern, routes[url]);
+        const views = routes[url];
+        if (Array.isArray(views)) {
+          router[method.toLowerCase()](pattern, ...views);
+        } else {
+          router[method.toLowerCase()](pattern, views);
+        }
         server.use(router.routes()).use(router.allowedMethods());
-        winston.debug(`[${basename}] ${method} ${pattern}`);
+        logger.debug(`${method} ${baseUrl}${pattern}`);
       });
     });
   });

@@ -5,7 +5,7 @@ import config from '../../src/server/config';
 
 should();
 const request = supertest.agent(server.listen());
-const baseUrl = `${config.URL.prefix}/users/`;
+const baseUrl = `${config.urls.prefix}/users/`;
 
 describe('Users', () => {
   before((done) => {
