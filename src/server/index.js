@@ -1,13 +1,11 @@
 import Koa from 'koa';
 import serve from 'koa-static';
-import dotenv from 'dotenv';
 import path from 'path';
 import winston from 'winston';
 
 import config from './config';
 import bootstrap from './apps';
 
-dotenv.config();
 const server = new Koa();
 winston.level = config.debug ? 'debug' : 'info';
 
