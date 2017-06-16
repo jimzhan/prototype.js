@@ -15,7 +15,7 @@ Production application boilerplate for Vue and Koa, batteries included:
 + [Vue.js](https://github.com/vuejs/vue) Progressive frontend framework.
 + [Koa.js](https://github.com/koajs/koa) Next generation web framework.
 + [Dotenv](https://github.com/motdotla/dotenv) Production settings profile solution.
-+ [Foundation](http://foundation.zurb.com/) Foundation Framework Integration.
++ [Foundation](http://foundation.zurb.com/) Framework Integration.
 + NPM scripts for common operations.
 
 
@@ -24,7 +24,7 @@ Production application boilerplate for Vue and Koa, batteries included:
 
 ## Server
 * configurable prefixed server endpoint (`/v1` by default).
-* intelligent/automatic routers registration.
+* intelligent/automatic routes registration.
 
   Module created under `apps` folder with routes defined in `index.js` will be registered onto server router automatically.
 ```javscript
@@ -32,14 +32,15 @@ Production application boilerplate for Vue and Koa, batteries included:
 //  `prefix -> false` will disable prefix for this module.
 export const prefix = '/<module-prefix>';
 
-import { list, get, create, update, remove } from './views';
+import * as mw from './middleware';
+import * as views from './views';
 
 export default {
-  'GET /', list,
-  'GET /:key', get,
-  'POST /', create,
-  'PUT  /:key', update,
-  'DELETE /:key', delete,
+  'GET /', views.list,
+  'GET /:key', views.get,
+  'POST /', [mw.acl, views.create],
+  'PUT  /:key', views.update,
+  'DELETE /:key', views.delete,
 }
 ```
 
