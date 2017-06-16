@@ -10,6 +10,9 @@ module.exports = {
   entry: {
     app: './src/client/index.js',
   },
+  externals: {
+    foundation: 'Foundation',
+  },
   output: {
     path: path.resolve(root, 'dist'),
     filename: '[name].js',

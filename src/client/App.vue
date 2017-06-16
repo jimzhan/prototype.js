@@ -6,6 +6,10 @@
 
 <script>
 import $ from 'jquery';
+/* eslint-disable */
+window.jQuery = jQuery;
+window.$ = $;
+/* eslint-enable */
 
 export default {
   name: 'app',
