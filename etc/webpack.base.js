@@ -1,5 +1,4 @@
 const path = require('path');
-const autoprefixer = require('autoprefixer');
 const root = path.resolve(__dirname, '..');
 const source = [
   path.resolve(root, 'src/client'),

@@ -5,15 +5,10 @@
 </template>
 
 <script>
-import $ from 'jquery';
-/* eslint-disable */
-window.jQuery = jQuery;
-window.$ = $;
-/* eslint-enable */
-
 export default {
   name: 'app',
-  ready() {
+  mounted() {
+    // eslint-disable-next-line
     $(this.$el).foundation();
   },
 };

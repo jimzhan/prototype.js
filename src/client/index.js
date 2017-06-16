@@ -2,7 +2,6 @@
 import 'script-loader!jquery';
 import 'script-loader!what-input';
 import 'script-loader!foundation-sites';
-import $ from 'jquery';
 /* eslint-enable */
 import Vue from 'vue';
 import App from './App';
