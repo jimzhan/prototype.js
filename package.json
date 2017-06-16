@@ -1,6 +1,6 @@
 {
   "name": "prototype.js",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Vue.js + Koa.js Application Boilerplate for Production",
   "main": "src/client/index.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "pretest": "npm run lint",
     "test": "mocha --require ignore-styles --compilers js:babel-core/register --recursive test/**/*.spec.js src/**/*.spec.js"
   },
-  "repository": "https://github.com/jimzhan/vue.js",
+  "repository": "https://github.com/jimzhan/prototype.js",
   "author": "Jim Zhan <jim.zhan@me.com>",
   "license": "Apache-2.0",
   "engines": {
