@@ -15,6 +15,7 @@ Production application boilerplate for Vue and Koa, batteries included:
 + [Vue.js](https://github.com/vuejs/vue) Progressive frontend framework.
 + [Koa.js](https://github.com/koajs/koa) Next generation web framework.
 + [Dotenv](https://github.com/motdotla/dotenv) Production settings profile solution.
++ [Foundation](http://foundation.zurb.com/) Foundation Framework Integration.
 + NPM scripts for common operations.
 
 
