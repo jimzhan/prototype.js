@@ -1,6 +1,5 @@
 const path = require('path');
-const formatter = require('eslint-friendly-formatter');
-
+const autoprefixer = require('autoprefixer');
 const root = path.resolve(__dirname, '..');
 const source = [
   path.resolve(root, 'src/client'),
@@ -30,7 +29,7 @@ module.exports = {
         loader: 'eslint-loader',
         enforce: 'pre',
         include: source,
-        options: { formatter }
+        options: { formatter: require('eslint-friendly-formatter') }
       },
       {
         test: /\.vue$/,
@@ -40,6 +39,11 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: source,
+      },
+      {
+        test: /\.(css|scss)$/,
+        loader: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+        exclude: /node_modules/
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
