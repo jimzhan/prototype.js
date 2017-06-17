@@ -623,6 +623,7 @@ $topbar-unstack-breakpoint: medium;
 // - - - - - - - - - - - - - - - -
 // Application Styles (Site Wide) 
 // - - - - - - - - - - - - - - - -
-$x-footer-bg: #2c3840;
-$x-footer-border-color: #3B4951;
-$x-footer-height: 50px;
+$sticky-footer-color: $white;
+$sticky-footer-bg: #2c3840;
+$sticky-footer-border-color: #3B4951;
+$sticky-footer-height: 100px;

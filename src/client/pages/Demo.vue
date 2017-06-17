@@ -1,15 +1,24 @@
 <template>
   <div>
     <h2>DEMO</h2>
-    <progress-bar :rate=79></progress-bar>
+    <button @click="openModal()" class="button round">Open Modal</button>
+    <modal ref="modal">
+      <h3>Header</h3>
+      <p>This is a Modal Dialog</p>
+    </modal>
   </div>
 </template>
 
 <script>
-import ProgressBar from '@components/ProgressBar';
+import Modal from '@components/Modal';
 
 export default {
   name: 'demo',
-  components: { ProgressBar },
+  components: { Modal },
+  methods: {
+    openModal() {
+      this.$refs.modal.open();
+    },
+  },
 };
 </script>
