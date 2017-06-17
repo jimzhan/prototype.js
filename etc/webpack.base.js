@@ -1,9 +1,11 @@
-const path = require('path');
-const root = path.resolve(__dirname, '..');
+const resolve = require('path').resolve;
+const root = resolve(__dirname, '..');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const source = [
-  path.resolve(root, 'src/client'),
-  path.resolve(root, 'test')
+  resolve(root, 'src/client'),
+  resolve(root, 'test')
 ];
+
 
 module.exports = {
   entry: {
@@ -13,7 +15,7 @@ module.exports = {
     foundation: 'Foundation',
   },
   output: {
-    path: path.resolve(root, 'dist'),
+    path: resolve(root, 'dist'),
     filename: '[name].js',
     publicPath: '/'
   },
@@ -21,7 +23,9 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': path.resolve(root, 'src/client') ,
+      '@components': resolve(root, 'src/client/components'),
+      '@pages': resolve(root, 'src/client/pages'),
+      '@styles': resolve(root, 'src/client/assets/styles'),
     }
   },
   module: {
@@ -35,17 +39,25 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            scss: 'vue-style-loader!css-loader!sass-loader',
+          }
+        },
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
         include: source,
       },
-      {
-        test: /\.(css|scss)$/,
+      { 
+        test: /\.css$/, 
+        loader: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      { 
+        test: /\.scss$/, 
         loader: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
-        exclude: /node_modules/
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

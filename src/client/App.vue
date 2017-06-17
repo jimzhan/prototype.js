@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import XNav from '@/components/XNav';
-import XFooter from '@/components/XFooter';
+import XNav from '@components/XNav';
+import XFooter from '@components/XFooter';
 
 export default {
   name: 'app',
@@ -25,20 +25,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$x-footer-height: 100px;
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  margin: 0 0 $x-footer-height; 
-}
-footer {
-  height: $x-footer-height;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
 </style>
