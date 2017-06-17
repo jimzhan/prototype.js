@@ -1,13 +1,13 @@
 import Koa from 'koa';
 import serve from 'koa-static';
 import path from 'path';
-import winston from 'winston';
+import logger from 'winston';
 
 import config from './config';
 import bootstrap from './apps';
 
 const server = new Koa();
-winston.level = config.debug ? 'debug' : 'info';
+logger.level = config.debug ? 'debug' : 'info';
 
 if (config.env === 'staging') {
   const dist = path.resolve(process.cwd(), config.static.root);
@@ -15,9 +15,10 @@ if (config.env === 'staging') {
 }
 
 bootstrap(server);
+logger.debug(`-------------- ${config.env}`);
 
 server.listen(config.port, () => {
-  winston.info(`Server started at port ${config.port}`);
+  logger.info(`Server started at port ${config.port}`);
 });
 
 export default server;

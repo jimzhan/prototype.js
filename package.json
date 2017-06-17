@@ -1,6 +1,6 @@
 {
   "name": "prototype.js",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Vue.js + Koa.js Application Boilerplate for Production",
   "main": "src/client/index.js",
   "scripts": {
@@ -17,12 +17,12 @@
     "start": "npm run koaserver | npm run webpackserver",
     "//-Staging-": "======= Staging server with static assets supports =======",
     "prestart:staging": "webpack --config etc/webpack.staging.js",
-    "start:staging": "pm2 start --name staging --interpreter babel-node src/server/index.js",
+    "start:staging": "cross-env NODE_ENV=staging pm2 start --name staging --interpreter babel-node src/server/index.js",
     "stop:staging": "pm2 delete staging",
     "poststop:staging": "npm run clean",
     "//-Release-": "======= Production release server =======",
     "prestart:release": "webpack --config etc/webpack.release.js",
-    "start:release": "pm2 start --name release --interpreter babel-node src/server/index.js",
+    "start:release": "cross-env NODE_ENV=release pm2 start --name release --interpreter babel-node src/server/index.js",
     "stop:release": "pm2 delete release",
     "poststop:release": "npm run clean",
     "//-X-": "======= Test case runner suites =======",
