@@ -9,7 +9,16 @@
     }],
     "stage-2"
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": [
+    "transform-runtime",
+    ["babel-plugin-module-alias", [
+      { "src": "./src/server/apps",       "expose": "@apps" },
+      { "src": "./src/server/config",     "expose": "@config" },
+      { "src": "./src/server/db",         "expose": "@db" },
+      { "src": "./src/server/middleware", "expose": "@middleware" },
+      { "src": "./src/server/utils",      "expose": "@utils" }
+    ]]
+  ],
   "comments": false,
   "env": {
     "test": {

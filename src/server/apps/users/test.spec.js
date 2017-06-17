@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import * as models from './models';
+import * as services from './services';
 
 describe('Users unit tests', () => {
   before((done) => {
@@ -37,3 +38,24 @@ describe('Users unit tests', () => {
     done();
   });
 });
+
+
+describe('User services test', () => {
+  before((done) => {
+    done();
+  });
+
+  it('should find list of users', (done) => {
+    services.list().then((response) => {
+      const data = response.data;
+      expect(data).to.be.a('array');
+      expect(data[0].id).to.equal(1);
+      done();
+    });
+  });
+
+  it('should get user with specific key', (done) => {
+    done();
+  });
+});
+
