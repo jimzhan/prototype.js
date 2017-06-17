@@ -1,11 +1,13 @@
 const resolve = require('path').resolve;
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const root = resolve(__dirname, '..');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const source = [
-  resolve(root, 'src/client'),
-  resolve(root, 'test')
-];
+const source = resolve(root, 'src/client');
+const tests  = resolve(root, 'test');
 
+const paths = {
+  source: resolve(root, 'src/client'),
+  test: resolve(root, 'test'),
+}
 
 module.exports = {
   entry: {
@@ -23,9 +25,10 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@components': resolve(root, 'src/client/components'),
-      '@pages': resolve(root, 'src/client/pages'),
-      '@styles': resolve(root, 'src/client/assets/styles'),
+      'styles': resolve(source, 'assets/styles'),
+      '@components': resolve(source, 'components'),
+      '@pages': resolve(source, 'pages'),
+      '@images': resolve(source, 'assets/images'),
     }
   },
   module: {
@@ -34,7 +37,7 @@ module.exports = {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
-        include: source,
+        include: [source, tests],
         options: { formatter: require('eslint-friendly-formatter') }
       },
       {
@@ -49,7 +52,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: source,
+        include: [source, tests],
       },
       { 
         test: /\.css$/, 

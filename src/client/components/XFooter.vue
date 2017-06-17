@@ -10,7 +10,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@styles/main.scss';
+@import '~styles/main.scss';
 
 footer {
   height: $x-footer-height;
