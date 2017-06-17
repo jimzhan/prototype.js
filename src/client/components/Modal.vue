@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="medium-10 medium-offset-1 columns">
-      <div id="reveal-dialog" class="reveal" data-reveal>
+      <div id="modal-dialog" class="reveal" data-reveal>
         <button class="close-button" data-close aria-label="Close modal" type="button">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -12,27 +12,26 @@
 </template>
 
 <script>
-/* eslint-disable */
 export default {
   name: 'modal',
   mounted() {
-    this.reveal = new Foundation.Reveal($('#reveal-dialog'), {
+    this.modal = new Foundation.Reveal($('#modal-dialog'), {
       animationIn: 'scale-in-up',
     });
   },
   methods: {
     open() {
-      this.reveal.open();
+      this.modal.open();
     },
   },
   destroyed() {
-    this.reveal.destroy();
+    this.modal.destroy();
   },
 };
 </script>
 
 <style lang="scss" scoped>
-#reveal-dialog {
+#modal-dialog {
   border-radius: 3px;
 }
 </style>

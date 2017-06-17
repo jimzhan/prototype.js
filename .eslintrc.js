@@ -14,6 +14,11 @@ module.exports = {
     'html',
     'import'
   ],
+  globals: {
+    '$': true,
+    'jQuery': true,
+    'Foundation': true,
+  },
   // check if imports actually resolve
   settings: {
     'import/resolver': {
