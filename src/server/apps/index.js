@@ -1,5 +1,6 @@
 import glob from 'glob';
 import path from 'path';
+import serve from 'koa-static';
 import Router from 'koa-router';
 import logger from 'winston';
 import config from '../config';
@@ -47,4 +48,9 @@ export default function bootstrap(server) {
       });
     });
   });
+
+  if (config.env === 'staging') {
+    const dist = path.resolve(process.cwd(), config.static.root);
+    server.use(serve(dist));
+  }
 }

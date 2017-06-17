@@ -1,18 +1,18 @@
 <template>
   <div>
-    <x-nav></x-nav>
+    <nav-bar></nav-bar>
     <main class="row medium-10 large-9 columns">
       <transition name="router-fade" mode="out-in">
         <router-view></router-view>
       </transition>
     </main>
-    <x-footer></x-footer>
+    <sticky-footer></sticky-footer>
   </div>
 </template>
 
 <script>
-import XNav from '@components/XNav';
-import XFooter from '@components/XFooter';
+import NavBar from '@components/NavBar';
+import StickyFooter from '@components/StickyFooter';
 
 export default {
   name: 'app',
@@ -20,7 +20,7 @@ export default {
     // eslint-disable-next-line
     $(this.$el).foundation();
   },
-  components: { XNav, XFooter },
+  components: { NavBar, StickyFooter },
 };
 </script>
 
