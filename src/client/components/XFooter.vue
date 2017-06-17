@@ -10,11 +10,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~styles/main.scss';
+@import '~styles/settings';
 
 footer {
   height: $x-footer-height;
-  background-color: $x-footer-background-color;
+  background-color: $x-footer-bg;
   position: fixed;
   bottom: 0;
   width: 100%;

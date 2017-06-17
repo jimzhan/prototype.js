@@ -1,3 +1,4 @@
+@charset 'utf-8';
 //  Foundation for Sites Settings
 //  -----------------------------
 //
@@ -40,6 +41,7 @@
 //  35. Title Bar
 //  36. Tooltip
 //  37. Top Bar
+
 @import '~foundation-sites/scss/util/util';
 
 // 1. Global
@@ -617,3 +619,10 @@ $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
+
+// - - - - - - - - - - - - - - - -
+// Application Styles (Site Wide) 
+// - - - - - - - - - - - - - - - -
+$x-footer-bg: #2c3840;
+$x-footer-border-color: #3B4951;
+$x-footer-height: 50px;

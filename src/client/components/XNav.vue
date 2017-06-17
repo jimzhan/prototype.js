@@ -5,12 +5,9 @@
     </div>
     <div class="top-bar-left">
       <ul class="menu">
-        <li>
-          <a href="#">Vue</a>
-        </li>
-        <li>
-          <a href="#">Koa</a>
-        </li>
+        <li><a href="/#/">Home</a></li>
+        <li><a href="#">Koa</a></li>
+        <li><a href="/#/demo">Demo</a></li>
       </ul>
     </div>
     <div class="top-bar-right">

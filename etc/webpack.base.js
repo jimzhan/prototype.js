@@ -14,6 +14,7 @@ module.exports = {
     app: './src/client/index.js',
   },
   externals: {
+    $: 'jQuery',
     foundation: 'Foundation',
   },
   output: {
