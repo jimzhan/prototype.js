@@ -15,9 +15,15 @@ Production application boilerplate for Vue and Koa, batteries included:
 + [Vue.js](https://github.com/vuejs/vue) Progressive frontend framework.
 + [Koa.js](https://github.com/koajs/koa) Next generation web framework.
 + [Dotenv](https://github.com/motdotla/dotenv) Production settings profile solution.
-+ [Foundation](http://foundation.zurb.com/) Framework Integration.
++ [Foundation](http://foundation.zurb.com/) Framework Integration with common UI components on Vue.
 + NPM scripts for common operations.
 
+## Key NPM Scripts
+* `npm start` - start Koa and Webpack server simultaneously with hot reload supports in foreground (default port `3000`), all consequent requests prefixed by `/v1` will be proxied to Koa automatically.
+* `npm run start:staging` - compile front end source code using `etc/webpack.staging.js` into folder `dist` then start Koa server via `PM2` with static assets supports.
+* `npm run stop:staging` - stop Koa server via `PM2`. 
+* `npm run start:release` - compile front end source code using `etc/webpack.release.js` into folder `dist` then start Koa server via `PM2`.
+* `npm run stop:release` - stop Koa server via `PM2`. 
 
 ## Client
 * webpack supports with `develop`, `staging` and `release` settings profiles.
