@@ -1,6 +1,6 @@
 {
   "name": "prototype.js",
-  "version": "0.3.15",
+  "version": "0.4.0",
   "description": "Vue.js + Koa.js Application Boilerplate for Production",
   "main": "src/client/index.js",
   "scripts": {
