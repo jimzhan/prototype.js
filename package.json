@@ -8,8 +8,6 @@
     "clean": "rimraf dist",
     "coverage": "istanbul cover src",
     "lint": "eslint --ext=.js,.vue src test",
-    "patch": "npm version patch",
-    "postpatch": "git add .",
     "tag": "git tag -a $(node -e \"console.log('v' + require('./package.json').version)\")",
     "posttag": "git push --tags",
     "//-Develop-": "====== [PM2] Dev server with hotreload supports for Vue and API =======",
