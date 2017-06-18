@@ -6,19 +6,37 @@
       <h3>Header</h3>
       <p>This is a Modal Dialog</p>
     </modal>
+    <progress-bar ref="progressBar" v-bind:progress="progress"></progress-bar>
   </div>
 </template>
 
 <script>
 import Modal from '@components/Modal';
+import ProgressBar from '@components/ProgressBar';
 
 export default {
   name: 'demo',
-  components: { Modal },
+  components: { ProgressBar, Modal },
+  data() {
+    return {
+      progress: 0,
+    };
+  },
   methods: {
     openModal() {
       this.$refs.modal.open();
     },
+    increase() {
+      const interval = setInterval(() => {
+        this.progress += 1;
+        if (this.progress >= 100) {
+          clearInterval(interval);
+        }
+      }, 1000);
+    },
+  },
+  mounted() {
+    this.increase();
   },
 };
 </script>
