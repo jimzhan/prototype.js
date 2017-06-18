@@ -8,7 +8,6 @@
     "clean": "rimraf dist",
     "coverage": "istanbul cover src",
     "lint": "eslint --ext=.js,.vue src test",
-    "prepatch": "git add .",
     "patch": "npm version patch",
     "postpatch": "npm run tag",
     "tag": "git tag -a $(node -e \"console.log('v' + require('./package.json').version)\")",
